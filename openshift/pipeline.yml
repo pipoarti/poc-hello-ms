@@ -5,7 +5,7 @@ metadata:
 spec:
   source:
     git:
-      uri: "https://git.gft.com/sansui/test-front"
+      uri: "https://github.com/pablolazaro/poc-ms-hello"
   strategy:
     jenkinsPipelineStrategy:
       jenkinsfilePath: jenkins/Jenkinsfile
