@@ -8,17 +8,17 @@ pipeline{
     }
     stage ('install modules'){
       steps{
-        sh '$(mvn bin)/mvn install'
+        sh 'mvn install'
       }
     }
     stage ('test'){
       steps{
-        sh '$(mvn bin)/mvn test'
+        sh 'mvn test'
       }
     }
     stage ('build') {
       steps{
-        sh '$(mvn bin)/mvn package'
+        sh 'mvn package'
       }
     }
     stage ('build image') {
