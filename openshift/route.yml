@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: poc-hello-route
+spec:
+  to:
+    kind: Service
+    name: poc-hello-service

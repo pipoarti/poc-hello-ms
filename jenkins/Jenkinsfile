@@ -23,7 +23,7 @@ pipeline{
     }
     stage ('build image') {
       steps{
-        sh 'oc start-build poc-ms-hello --from-dir=. --follow'
+        sh 'oc start-build poc-hello-ms --from-dir=. --follow'
       }
     }
   }
