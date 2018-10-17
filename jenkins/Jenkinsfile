@@ -1,0 +1,30 @@
+pipeline{
+  agent { label 'maven' }
+  stages{
+    stage ('checkout'){
+      steps{
+        checkout scm
+      }
+    }
+    stage ('install modules'){
+      steps{
+        sh '$(mvn bin)/mvn install'
+      }
+    }
+    stage ('test'){
+      steps{
+        sh '$(mvn bin)/mvn test'
+      }
+    }
+    stage ('build') {
+      steps{
+        sh '$(mvn bin)/mvn package'
+      }
+    }
+    stage ('build image') {
+      steps{
+        sh 'oc start-build poc-hello-ms --from-dir=. --follow'
+      }
+    }
+  }
+}

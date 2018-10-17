@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: poc-hello-ms-pipeline
+spec:
+  source:
+    git:
+      uri: "https://git.gft.com/sansui/test-front"
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: jenkins/Jenkinsfile
